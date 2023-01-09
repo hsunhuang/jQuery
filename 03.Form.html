@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+
+
+
+    <form action="">
+        <label for="" class="for">user</label>
+        <input type="text" class="type" name="user">
+
+        <label for="" class="for">password</label>
+        <input type="password" class="type">
+        <button class="button">TEST</button>
+        <div>
+            <input type="checkbox" checked>
+            <label for="">你是否同意</label>
+        </div>
+    </form>
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        $(':text').css('background', 'yellow')
+        $(':password').css('background', 'brown')
+
+        $(':checked').css('background-color', 'green')
+        $(':checked ~ label').css('background', 'gray')
+
+    </script>
+</body>
+
+</html>
