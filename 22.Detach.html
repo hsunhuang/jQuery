@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn btn-info">detach</button>
+    <div class="container">
+        <div class="row flex-column">
+            <div class="hello">Hello World</div>
+            <div class="hello hello1">Hello World1</div>
+            <div class="hello2">Hello World2</div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        let isDetached = false;
+        let myContent = null;
+        let index = 0;//計算按了幾次
+
+        //兩個按鈕 分開寫不用bool判斷---壞掉!!!有空再修理
+        // $(".row div").click(function () {
+        //     console.log('text:' $(event.target).text());
+        // })
+        $(".detach").click(function () {
+            myContent = $(".row div").detach();
+        })
+        $(".append").click(function () {
+            $(".row").append(myContent);
+        })
+
+        //使用bool判斷
+        // $(".btn").click(function () {
+        //     if (isDetached) {
+        //         isDetached = false;
+        //         $('.row').append(myContent);
+        //     }
+        //     else {
+        //         isDetached = true;
+        //         myContent = $(".row div").detach();
+        //     }
+        // });
+
+
+    </script>
+</body>
+
+</html>

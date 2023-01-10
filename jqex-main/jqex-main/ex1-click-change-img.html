@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click to change images</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <style>
+        .img-demo {
+            height: 300px;
+        }
+
+        .img-demo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .img-wrap img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="img-demo">
+                    <img src="./imgs/product1.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="img-wrap d-flex">
+                    <div class="img-row">
+                        <img src="./imgs/product1.jpg" alt="" />
+                    </div>
+                    <div class="img-row">
+                        <img src="./imgs/product2.jpg" alt="" />
+                    </div>
+                    <div class="img-row">
+                        <img src="./imgs/product3.jpg" alt="" />
+                    </div>
+                    <div class="img-row">
+                        <img src="./imgs/product4.jpg" alt="" />
+                    </div>
+                    <div class="img-row">
+                        <img src="./imgs/product5.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        //點選後替換圖片
+
+        //JS的作法
+        const imgs = document.querySelectorAll('.img-wrap img')
+        const bigImg = document.querySelector('.img-demo img')
+        // console.log('imgs', imgs);
+
+        imgs.forEach(function (img, index) {
+            // console.log('img', img);
+            // console.log('index', index);
+            img.addEventListener('click', () => {
+                bigImg.setAttribute('src', img.getAttribute('src'))
+            })
+        })
+
+        //JQ方法  1.when 時間點 使用者點選小圖chick之後
+        $('.img-wrap img').click(function (event) {
+            // console.log('img', $(event.target).attr('src'));
+            $('.img-demo img').attr('src', $(event.target).attr('src'))
+        })
+        //2.拿使用者點選的那張小圖的src 換大圖的src
+
+
+
+    </script>
+</body>
+
+</html>
