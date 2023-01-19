@@ -35,7 +35,20 @@
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script></script>
+    <script>
+        $(window).scroll(function () {
+            const scrollTop = $(window).scrollTop();
+            const bodyHeight = $('body').height();
+            const windowHeight = $(window).height();
+
+            const percentage = scrollTop / (bodyHeight - windowHeight) * 100;
+
+            console.log('percentage', percentage);
+
+            $('.progressBar').css('width', `${percentage}%`)//%甚麼意思?
+        })
+
+    </script>
 </body>
 
 </html>
